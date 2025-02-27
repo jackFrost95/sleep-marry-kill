@@ -1,0 +1,188 @@
+/* General */
+:root {
+    /* Colors */
+    --shadow: #00000033;
+  
+    --border-bright: #ff5555;
+    --border-standard: #660000;
+    --border-dark: #da2abc;
+  
+    --background-dark: #e98bba;
+    --background-standard: #e40000;
+    --background-transparent: #4d0000ab;
+    --background-bright: #d67272d5;
+  
+    --white: #ffffff;
+    --white-hover: #b9b9b9;
+    --white-disabled: #919191;
+    --green: #0ec70e;
+    --green-hover: #26d326;
+    --green-disabled: #0ec70e;
+    --green-border: #0c850c;
+    --red: #dd1515;
+    --red-hover: rgb(221, 48, 48);
+    --red-disabled: #921010;
+    --red-border: #8b0e0e;
+  
+    /* Values */
+    --border-radius: 0.5vh;
+  }
+  
+  /** Default Values **/
+  
+  body {
+    background: var(--background-standard);
+    color: var(--white);
+    height: 100vh;
+    animation: mymove 40s infinite;
+    font-family: "Angelia Beauty";
+  }
+
+  * {
+    border-color: var(--border-standard);
+  }
+
+  /* Header Values */
+  
+  .header {
+    background-color: var(--background-transparent);
+    border-bottom: 4px solid var(--border-standard);
+  }
+  
+  .p-menubar {
+    text-shadow: 2px 2px var(--shadow);
+  }
+  
+  .p-menuitem-content:hover {
+    color: var(--white-hover);
+  }
+
+  /* Profile Image */
+  .confirm {
+    margin: auto;
+    font-size: 3vh;
+    background-color: #0c850c;
+    border: 1px solid #068606;
+  }
+  .confirm:disabled {
+    margin: auto;
+    font-size: 3vh;
+    background-color: #65c565a1;
+    border: 1px solid #068606;
+  }
+
+  .profile {
+    width: 98%;
+    height: 65vh;
+    margin: 2%;
+    padding-bottom: 0;
+    * {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .image-container {
+        height: 65%;
+        .image {
+            border: 4px solid var(--border-bright);
+            border-radius: 80px;
+            background-color: white;
+            height: 100%;
+            width: auto;
+        }
+    }
+    .name {
+        font-size: 4vh;
+    }
+    .game {
+        font-size: 2.5vh;
+        font-weight: bold;
+    }
+    .buttons {
+      margin-top: 4px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+
+      font-size: 2.5vh;
+
+      .sleep-active {
+        background-color:#8f0adb;
+        border: 1px solid #c92c75;
+      }
+      .sleep-inactive {
+        background-color:#a150cf7a;
+        border: 1px solid #cf0c6770;
+      }
+      .marry-active {
+        background-color:#00e1ff;
+        border: 1px solid #1ecae0;
+      }
+      .marry-inactive {
+        background-color:#68aeb86e;
+        border: 1px solid #1ecae0;
+      }
+      .kill-active {
+        background-color:#696363;
+        border: 1px solid rgb(0, 0, 0);
+      }
+      .kill-inactive {
+        background-color:#42424259;
+        border: 1px solid rgba(0, 0, 0, 0.397);
+      }
+    }
+  }
+  
+  /* Card */
+
+  .card {
+    background-color: var(--background-bright);
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    border: 2px solid var(--border-standard);
+    z-index: 0;
+    overflow-y: auto;
+  }
+
+  .profile-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  
+  /* Scrollbar */
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--background-dark);
+  }
+  
+  /* Wallpaper */
+  
+  @keyframes slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(1024px, 1024px); /* The image width */
+  }
+}
+  .scrolling-image-container {
+    overflow: hidden;
+    background-repeat: repeat-x repeat-y;
+    height: 92vh;
+    width: 100vw;
+    position: fixed;
+  }
+
+  .scrolling-image {
+    background: url("/styles/wallpaper/hearts.png");
+    height: 200vh;
+    width: 200vw;;
+    margin-left: -50vw;
+    margin-top: -100vh;
+    animation: slide 50s linear infinite;
+    clear: both;
+    z-index: 100;
+  }
+  
+  /**  PrimeReact Settings **/
+  

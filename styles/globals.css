@@ -1,0 +1,77 @@
+@import "primereact/resources/primereact.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General */
+:root {
+  /* Values */
+  --border-radius: 0.5vh;
+}
+
+/* Default Values */
+
+body {
+  height: 100vh;
+}
+
+h1 {
+  font-size: 4vh;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Card */
+.card {
+  padding: 2vh 2vw;
+  border-radius: 2vw;
+  border: 2px solid;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+}
+
+/* Text sizes */
+.standard-text,
+.p-inputtext {
+  font-size: 1.55vh;
+}
+
+.big-text {
+  font-size: 2.5vh;
+}
+
+.bigger-text {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+/** Image Settings **/
+
+/**  PrimeReact Settings **/
+
+.p-component {
+  background: transparent;
+}
+
+/* Buttons */
+
+.p-button {
+  padding: 0.75vh 1vw;
+  border-radius: 12px;
+  user-select: none;
+}
+
+/** Header Settings **/
+body > div {
+  height: 92vh;
+}

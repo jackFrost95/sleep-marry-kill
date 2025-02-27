@@ -1,0 +1,142 @@
+/* General */
+:root {
+    /* Colors */
+    --shadow: #00000033;
+  
+    --border-bright: #ffffff55;
+    --border-light-hightlight: #ffffff77;
+  
+    --border-standard: #333333;
+    --border-dark: #1f1d1d;
+  
+    --background-dark: #202020;
+    --background-standard: #262626;
+    --background-bright-medium: #2c2c2c;
+    --background-bright: #333333;
+  
+    /* Original Spinner-Blue: #01b6ef */
+    --spinner-blue: #1592b8;
+    --spinner-blue-hover: #197c99;
+    --spinner-blue-disabled: #165f74;
+  
+    --white: #d8d8d8;
+    --white-hover: #b9b9b9;
+    --white-disabled: #919191;
+    --green: #136e13;
+    --green-hover: #135e13;
+    --green-disabled: #084008;
+    --blue: #3b82ff;
+    --orange: #ea6e08;
+    --yellow: #eab308;
+    --red: #dd1515;
+    --red-hover: #a8101a;
+    --red-disabled: #751217;
+  
+    /* Values */
+    --border-radius: 0.5vh;
+  }
+  
+  /* Default Values */
+  
+  body {
+    background-color: var(--background-standard);
+    color: var(--white);
+  }
+  
+  div {
+    overflow: hidden;
+  }
+  
+  /* Card */
+  .card {
+    background-color: var(--background-dark);
+    border-color: var(--border-standard);
+    width: 40%;
+  }
+  
+  /* Scrollbar */
+  
+  ::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--spinner-blue);
+    border-radius: 20px;
+  }
+  
+  /* Text sizes */
+  .standard-text,
+  .p-inputtext {
+    font-size: 1.55vh;
+  }
+  
+  /**  PrimeReact Settings **/
+  
+  .p-menuitem:hover {
+    color: var(--spinner-blue);
+  }
+  
+  .p-highlight {
+    background: var(--spinner-blue);
+  }
+  
+  .p-dialog-header-icons,
+  .p-multiselect-close,
+  .p-toast-icon-close {
+    width: 1vw;
+    height: 1vw;
+    margin-right: 0.25vw;
+    border-radius: 100%;
+  }
+  
+  .p-dialog-header-icon:hover,
+  .p-multiselect-close:hover,
+  .p-toast-icon-close:hover {
+    color: var(--red-hover);
+  }
+  
+  .p-component {
+    background: transparent;
+  }
+  
+  /* Base (Inputs, Dialog, MultiSelect) */
+  
+  .p-inputtext {
+    padding: 0.7vh 0.5vw;
+    border-radius: 0.5vh;
+    margin: 0;
+  }
+  
+  input.p-inputtext {
+    border: 1px solid var(--border-bright);
+  }
+  
+  input.p-inputtext:enabled:not(:focus):hover {
+    border-color: var(--border-light-hightlight);
+  }
+  
+  .p-inputtext:enabled:focus {
+    outline: 0 none;
+    border-color: var(--spinner-blue);
+  }
+  
+  /* Buttons */
+  
+  .p-button {
+    background-color: var(--spinner-blue) !important;
+    padding: 0.75vh 1vw;
+    border-radius: 12px;
+    user-select: none;
+  }
+  
+  .p-button:enabled:hover {
+    background-color: var(--spinner-blue-hover) !important;
+  }
+  
+  .p-button:disabled {
+    background-color: var(--spinner-blue-disabled) !important;
+    color: var(--white-disabled);
+  }
+  
