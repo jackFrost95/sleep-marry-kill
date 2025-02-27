@@ -60,7 +60,7 @@ function StatusButton({
   const active = type[0] == index;
   return (
     <Button
-      className={name + (active ? "-active" : "-inactive")}
+      className={name + (active ? " active" : "")}
       label={icon}
       onClick={() => {
         if (type[0] == index) {

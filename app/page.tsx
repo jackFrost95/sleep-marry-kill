@@ -20,7 +20,7 @@ export default function Page() {
   useEffect(() => {
     const loadProfiles = async () => {
       const savedProfiles = localStorage.getItem("smk-profiles");
-      if(!savedProfiles) {
+      if (!savedProfiles) {
         const profiles = await getAllProfiles();
         shuffle(profiles);
         setProfiles(profiles);
@@ -29,8 +29,8 @@ export default function Page() {
         setProfiles(await JSON.parse(savedProfiles));
       }
       const savedIndex = localStorage.getItem("smk-index");
-      if(savedIndex) setIndex(parseInt(savedIndex));
-    }
+      if (savedIndex) setIndex(parseInt(savedIndex));
+    };
 
     loadProfiles();
   }, []);
@@ -42,6 +42,14 @@ export default function Page() {
     if (index == 0) return;
     return (
       <>
+      <Button label="Reset" onClick={async () => {
+        setIndex(0);
+        const profiles = await getAllProfiles();
+        shuffle(profiles);
+        setProfiles(profiles);
+        localStorage.setItem("smk-index", 0+"");
+        localStorage.setItem("smk-profiles", JSON.stringify(profiles));
+      }} />
         <div className="scrolling-image-container">
           <div className="scrolling-image"></div>
         </div>
@@ -97,7 +105,7 @@ export default function Page() {
     finishedEntries[index] = newEntry;
     setFinishedEntries(finishedEntries);
     setIndex(index + 1);
-    localStorage.setItem("smk-index", (index + 1) +"");
+    localStorage.setItem("smk-index", index + 1 + "");
     setSelectionFinished(false);
     setSelectedSleep(undefined);
     setSelectedMarry(undefined);
@@ -108,7 +116,7 @@ export default function Page() {
   return (
     <>
       <div className="scrolling-image-container">
-        <div className="scrolling-image"></div>
+        <div className="scrolling-image" />
       </div>
       <div className="w-full h-full flex items-center">
         <ProfilePreload profiles={profiles} />
@@ -120,7 +128,7 @@ export default function Page() {
               marry={[selectedMarry, setSelectedMarry]}
               kill={[selectedKill, setSelectedKill]}
               selectionFinished={selectionFinished}
-              key={index+"-"+0}
+              key={index + "-" + 0}
               index={0}
             />
             <Profile
@@ -129,7 +137,7 @@ export default function Page() {
               marry={[selectedMarry, setSelectedMarry]}
               kill={[selectedKill, setSelectedKill]}
               selectionFinished={selectionFinished}
-              key={index+"-"+1}
+              key={index + "-" + 1}
               index={1}
             />
             <Profile
@@ -138,14 +146,14 @@ export default function Page() {
               marry={[selectedMarry, setSelectedMarry]}
               kill={[selectedKill, setSelectedKill]}
               selectionFinished={selectionFinished}
-              key={index+"-"+2}
+              key={index + "-" + 2}
               index={2}
             />
           </div>
           <div className="flex">
             <Button
               className="confirm"
-              label="Bestätigen"
+              label="Confirm"
               onClick={onClick}
               disabled={!(selectedSleep != undefined && selectedKill != undefined && selectedMarry != undefined)}
             />

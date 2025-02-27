@@ -3,8 +3,7 @@ import { Metadata } from "next";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "UFH",
-  applicationName: "UFH Homepage",
+  title: "Sleep Marry Kill",
   icons: "icon.webp",
 };
 
