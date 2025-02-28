@@ -173,10 +173,9 @@
   .scrolling-image-container {
     overflow: hidden;
     background-repeat: repeat-x repeat-y;
-    height: 100vh;
+    height: 101vh;
     margin-top: -1vh;
-    margin-left: -.3w;
-    width: 100vw;
+    width: 101vw;
     display: block;
     position: fixed;
   }

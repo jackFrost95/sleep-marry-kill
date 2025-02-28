@@ -46,5 +46,6 @@ export async function getAllProfiles(): Promise<SMKProfile[]> {
             index++;
         })
     });
+    console.log(profiles);
     return profiles;
 }

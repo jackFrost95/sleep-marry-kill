@@ -5,30 +5,12 @@ import NormalScreen from "@/components/NormalScreen";
 import { SMKFinishedProfiles, SMKProfile } from "@/global/types";
 import { getAllProfiles } from "@/lib/apis/SleepMarryKillApi";
 import "@/styles/sleep-marry-kill.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import profiles from "@/public/bonus-sinnlos.json";
 
 export default function Page() {
-  const [profiles, setProfiles] = useState<SMKProfile[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [finishedEntries, setFinishedEntries] = useState<SMKFinishedProfiles[]>([]);
-
-  useEffect(() => {
-    const loadProfiles = async () => {
-      const savedProfiles = localStorage.getItem("smk-profiles");
-      if (!savedProfiles) {
-        const profiles = await getAllProfiles();
-        shuffle(profiles);
-        setProfiles(profiles);
-        localStorage.setItem("smk-profiles", JSON.stringify(profiles));
-      } else {
-        setProfiles(await JSON.parse(savedProfiles));
-      }
-      const savedIndex = localStorage.getItem("smk-index");
-      if (savedIndex) setIndex(parseInt(savedIndex));
-    };
-
-    loadProfiles();
-  }, []);
 
   if (profiles.length == 0) return;
 
@@ -39,7 +21,6 @@ export default function Page() {
       setIndex(0);
       const profiles = await getAllProfiles();
       shuffle(profiles);
-      setProfiles(profiles);
       localStorage.setItem("smk-index", 0 + "");
       localStorage.setItem("smk-profiles", JSON.stringify(profiles));
     };
@@ -49,16 +30,13 @@ export default function Page() {
 
   // TODO: Move to useEffect
   return (
-    <>
-      <NormalScreen
-        profiles={profiles}
-        index={index}
-        setIndex={setIndex}
-        finishedEntries={finishedEntries}
-        setFinishedEntries={setFinishedEntries}
-      />
-      <a className="bonus-sinnlos" href="/bonus-sinnlos" />
-    </>
+    <NormalScreen
+      profiles={profiles}
+      index={index}
+      setIndex={setIndex}
+      finishedEntries={finishedEntries}
+      setFinishedEntries={setFinishedEntries}
+    />
   );
 }
 
