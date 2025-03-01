@@ -1,0 +1,74 @@
+[
+    {
+        "ending": "jpg",
+        "game": "League of Legends",
+        "name": "Bel'Veth",
+        "path": "static/bonus/sinnlos/League of Legends"
+    },
+    {
+        "ending": "jpg",
+        "game": "League of Legends",
+        "name": "Kog'Maw",
+        "path": "static/bonus/sinnlos/League of Legends"
+    },
+    {
+        "ending": "jpg",
+        "game": "League of Legends",
+        "name": "Rek'Sai",
+        "path": "static/bonus/sinnlos/League of Legends"
+    },
+    {
+        "ending": "png",
+        "game": "Slay the Spire",
+        "name": "The Ironclad",
+        "path": "static/bonus/sinnlos/Slay the Spire"
+    },
+    {
+        "ending": "png",
+        "game": "Slay the Spire",
+        "name": "The Silent",
+        "path": "static/bonus/sinnlos/Slay the Spire"
+    },
+    {
+        "ending": "jpg",
+        "game": "Slay the Spire",
+        "name": "The Watcher",
+        "path": "static/bonus/sinnlos/Slay the Spire"
+    },
+    {
+        "ending": "webp",
+        "game": "Gorillaz",
+        "name": "2D",
+        "path": "static/bonus/sinnlos/Gorillaz"
+    },
+    {
+        "ending": "webp",
+        "game": "Gorillaz",
+        "name": "Murdoc",
+        "path": "static/bonus/sinnlos/Gorillaz"
+    },
+    {
+        "ending": "webp",
+        "game": "Gorillaz",
+        "name": "Russel",
+        "path": "static/bonus/sinnlos/Gorillaz"
+    },
+    {
+        "ending": "webp",
+        "game": "Borderlands 3",
+        "name": "The Calypso Twins",
+        "path": "static/bonus/sinnlos/Borderlands 3"
+    },
+    {
+        "ending": "jpg",
+        "game": "Greek Mythology",
+        "name": "Scylla and Charybdis",
+        "path": "static/bonus/sinnlos/Greek Mythology"
+    },
+    {
+        "ending": "jpg",
+        "game": "Pokémon",
+        "name": "Jesse and James",
+        "path": "static/bonus/sinnlos/Pokémon"
+    }
+]

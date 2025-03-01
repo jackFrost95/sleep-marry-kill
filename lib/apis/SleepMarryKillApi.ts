@@ -4,8 +4,8 @@ import fs from "fs";
 import { SMKProfile } from "@/global/types";
 
 export async function getAllProfiles(): Promise<SMKProfile[]> {
-    const basePath = "static"
-    const dir = process.cwd()+"/static";
+    const basePath = "static/normal"
+    const dir = process.cwd()+"/static/normal";
     const directories: string[] = fs.readdirSync(dir); // gets all directories
 
         
