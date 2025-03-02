@@ -4,12 +4,14 @@ import { useState } from "react";
 import { Button } from "primereact/button";
 
 export default function NormalScreen({
+  reset,
   profiles,
   index,
   setIndex,
   finishedEntries,
   setFinishedEntries,
 }: {
+  reset: Function,
   profiles: SMKProfile[];
   index: number;
   setIndex: Function;
@@ -47,6 +49,7 @@ export default function NormalScreen({
 
   return (
     <>
+      <Button label="Reset" onClick={() => reset()} className="reset-button" />
       <div className="scrolling-image-container">
         <div className="scrolling-image" />
       </div>

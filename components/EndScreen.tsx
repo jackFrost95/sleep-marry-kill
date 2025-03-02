@@ -6,7 +6,7 @@ export default function EndScreen({reset, finishedEntries}: {reset: Function, fi
   if(!finishedEntries || finishedEntries.length == 0) reset();
     return (
           <>
-          <Button label="Reset" onClick={() => reset()} />
+          <Button label="Reset" onClick={() => reset()} className="reset-button" />
             <div className="scrolling-image-container">
               <div className="scrolling-image"></div>
             </div>

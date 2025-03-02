@@ -32,17 +32,17 @@ export default function Page() {
 
   if (profiles.length == 0) return;
 
+  const reset = async () => {
+    setIndex(0);
+    const profiles = await getAllProfiles();
+    shuffle(profiles);
+    setProfiles(profiles);
+    localStorage.setItem("smk-index", 0 + "");
+    localStorage.setItem("smk-profiles", JSON.stringify(profiles));
+  };
+
   if (profiles.length < (index + 1) * 3) {
     if (index == 0) return;
-
-    const reset = async () => {
-      setIndex(0);
-      const profiles = await getAllProfiles();
-      shuffle(profiles);
-      setProfiles(profiles);
-      localStorage.setItem("smk-index", 0 + "");
-      localStorage.setItem("smk-profiles", JSON.stringify(profiles));
-    };
 
     return <EndScreen reset={reset} finishedEntries={finishedEntries} />;
   }
@@ -51,6 +51,7 @@ export default function Page() {
   return (
     <>
       <NormalScreen
+        reset={reset}
         profiles={profiles}
         index={index}
         setIndex={setIndex}
