@@ -93,6 +93,7 @@ export default function NormalScreen({
               disabled={!(selectedSleep != undefined && selectedKill != undefined && selectedMarry != undefined)}
             />
           </div>
+          <p className="counter">{index + 1} / {profiles.length / 3}</p>
         </div>
       </div>
     </>
