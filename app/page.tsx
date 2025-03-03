@@ -22,6 +22,10 @@ export default function Page() {
         localStorage.setItem("smk-profiles", JSON.stringify(profiles));
       } else {
         setProfiles(await JSON.parse(savedProfiles));
+        const finishedEntries = localStorage.getItem("smk-finished");
+        if(finishedEntries) {
+          setFinishedEntries(await JSON.parse(finishedEntries));
+        }
       }
       const savedIndex = localStorage.getItem("smk-index");
       if (savedIndex) setIndex(parseInt(savedIndex));
@@ -37,8 +41,10 @@ export default function Page() {
     const profiles = await getAllProfiles();
     shuffle(profiles);
     setProfiles(profiles);
+    setFinishedEntries([]);
     localStorage.setItem("smk-index", 0 + "");
     localStorage.setItem("smk-profiles", JSON.stringify(profiles));
+    localStorage.removeItem("smk-finished");
   };
 
   if (profiles.length < (index + 1) * 3) {

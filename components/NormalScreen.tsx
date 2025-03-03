@@ -26,9 +26,7 @@ export default function NormalScreen({
   const onClick = async () => {
     setSelectionFinished(true);
     if (
-      profiles[index * 3].deathImageEnding ||
-      profiles[index * 3 + 1].deathImageEnding ||
-      profiles[index * 3 + 2].deathImageEnding
+      profiles[index * 3 + selectedSleep!].deathImageEnding
     ) {
       await new Promise((r) => setTimeout(r, 2000));
     }
@@ -39,6 +37,7 @@ export default function NormalScreen({
     };
     finishedEntries[index] = newEntry;
     setFinishedEntries(finishedEntries);
+    localStorage.setItem("smk-finished", JSON.stringify(finishedEntries));
     setIndex(index + 1);
     localStorage.setItem("smk-index", index + 1 + "");
     setSelectionFinished(false);

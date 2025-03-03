@@ -47,6 +47,7 @@ body {
 .reset-button {
   position: absolute;
   z-index: 999;
+  border: none;
 }
 
 .counter {
@@ -107,6 +108,7 @@ body {
   }
   .name {
     font-size: 4vh;
+    margin-bottom: -3%;
   }
   .game {
     font-size: 2.5vh;
